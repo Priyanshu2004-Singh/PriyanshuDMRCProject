@@ -103,11 +103,27 @@ PriyanshuDMRCProject/
 
 | Error | Fix |
 |---|---|
-| `EADDRINUSE :::5001` | Run `lsof -ti:5001 \| xargs kill -9` |
-| `EADDRINUSE :::5173` | Run `lsof -ti:5173 \| xargs kill -9` |
+| `gyp ERR! not ok` on Windows | See **Windows Build Tools** step below ↓ |
+| `EADDRINUSE :::5001` | Run `lsof -ti:5001 \| xargs kill -9` (mac) or `npx kill-port 5001` (win) |
+| `EADDRINUSE :::5173` | Run `lsof -ti:5173 \| xargs kill -9` (mac) or `npx kill-port 5173` (win) |
 | White page / API errors | Make sure **both** terminals are running |
 | Fresh database needed | Delete `backend/data/dmrc_vendors.db` and restart backend |
+
+### ⚠️ Windows Only — Fix `gyp ERR! not ok` / `better-sqlite3` build failure
+
+`better-sqlite3` is a native C++ SQLite module that must be compiled on Windows. Run this **once** in **PowerShell as Administrator**:
+
+```powershell
+npm install --global windows-build-tools
+```
+
+If that doesn't work, install manually:
+1. Download [Visual Studio Build Tools 2022](https://aka.ms/vs/17/release/vs_BuildTools.exe)
+2. Run installer → tick **"Desktop development with C++"** → Install
+3. Install [Python 3.x](https://www.python.org/downloads/) — tick **"Add Python to PATH"**
+4. **Restart** your terminal, then run `npm install` again in the `backend/` folder
 
 ---
 
 > Reference: DMRC/Plg./Vendor/7000/Vol.2/2025/ dated 29.09.2025 — Annexures A–D
+

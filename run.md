@@ -28,6 +28,25 @@ Should be **v9 or above**.
 
 ---
 
+### ⚠️ WINDOWS ONLY — Build Tools for SQLite (REQUIRED)
+
+The backend uses `better-sqlite3` which is a **native C++ module**. On Windows, it must compile from source. Without build tools, you will get a `node-gyp` / `gyp ERR` error.
+
+**Fix — run this once in PowerShell as Administrator:**
+```powershell
+npm install --global windows-build-tools
+```
+
+If that doesn't work, install manually:
+1. Download **Visual Studio Build Tools 2022** from [https://aka.ms/vs/17/release/vs_BuildTools.exe](https://aka.ms/vs/17/release/vs_BuildTools.exe)
+2. Run the installer → tick **"Desktop development with C++"** → click Install
+3. Also install **Python 3.x** from [https://www.python.org/downloads/](https://www.python.org/downloads/) (tick "Add to PATH")
+4. Restart your terminal after installing, then run `npm install` again
+
+> macOS / Linux users: no action needed, `better-sqlite3` works out of the box.
+
+---
+
 ### 3. Git (optional, for cloning)
 
 ```bash
