@@ -1,0 +1,11 @@
+# Frontend-specific ignores (root .gitignore handles most things)
+
+# Vite build output
+dist/
+dist-ssr/
+
+# Local env overrides
+*.local
+
+# Tests
+coverage/

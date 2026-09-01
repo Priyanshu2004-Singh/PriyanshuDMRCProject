@@ -1,0 +1,45 @@
+# ─── Dependencies ──────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ─── Build outputs ─────────────────────────────────────────
+dist/
+build/
+
+# ─── Environment files ─────────────────────────────────────
+# ⚠️  DO NOT commit .env files to public repos in production.
+# For this project (local dev / handover), .env is intentionally
+# included so the recipient can run immediately without setup.
+# Uncomment the line below if deploying to a public repository:
+# .env
+# .env.*
+# !.env.example
+
+# ─── SQLite database ───────────────────────────────────────
+# The database is auto-created and seeded on first run.
+# Uncommenting this will cause a fresh DB for every clone.
+# data/*.db
+
+# ─── Uploaded files ────────────────────────────────────────
+# Uploaded PDFs are local runtime data — do not commit.
+uploads/*
+!uploads/.gitkeep
+
+# ─── OS / Editor junk ──────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# ─── Logs ──────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─── TypeScript cache ──────────────────────────────────────
+*.tsbuildinfo

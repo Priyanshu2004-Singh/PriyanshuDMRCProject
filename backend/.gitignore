@@ -1,0 +1,19 @@
+# Backend-specific ignores (root .gitignore handles most things)
+
+# Compiled output
+dist/
+
+# SQLite runtime database
+# Included in repo so fresh clones get seeded data instantly.
+# Uncomment to always start with a fresh DB:
+# data/*.db
+
+# Uploaded PDF files (runtime data)
+uploads/*
+!uploads/.gitkeep
+
+# Env
+# .env   ← intentionally committed for easy local handover
+
+# Tests
+coverage/
